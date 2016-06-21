@@ -1,0 +1,52 @@
+{
+    "name": "react-components-common",
+    "version": "0.0.1",
+    "description": "React Components",
+    "main": "lib/main.js",
+	"private": false,
+    "scripts": {
+		"test": "echo \"no tests yet\" && exit 0",
+		"build": "gulp clean && NODE_ENV=development gulp build && cp -R third-part/. dist/third-part",
+        "build-win": "gulp clean && set NODE_ENV=development && gulp build && cp -R third-part/. dist/third-part",
+		"examples": "gulp dev:server",
+		"publish:site": "gulp publish:examples",
+		"start": "gulp dev",
+		"release": "gulp release",
+        "watch": "gulp watch:lib"
+    },
+    "author": {
+        "name": "Holly Liu",
+        "email": "liuhong1.happy@163.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/liuhong1happy/react-components.git"
+    },
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "react-router",
+		"react-form",
+		"react-components"
+    ],
+    "dependencies": {
+		"classnames":"^2.2.1"
+    },
+    "peerDependencies": {
+        "react": "^15.0.2",
+        "react-dom": "^15.0.2"
+    },
+    "devDependencies": {
+		"react-component-gulp-tasks": "^0.7.7",
+		"gulp": "^3.9.0"
+    },
+	"browserify":{
+		"transform":[
+			"reactify",
+			"envify"
+		]
+	},
+    "browserify-shim": {
+       "react": "global:React"
+     }
+}
